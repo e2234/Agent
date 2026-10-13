@@ -1,5 +1,8 @@
 # Drive Class Organizer
 
+> This repo also contains **[Textbook Helper](textbook-helper/README.md)**, a
+> Chrome extension that answers questions from your textbook reading with Claude.
+
 A web app that scans a connected Google Drive, figures out which **class**
 (course or subject) each file belongs to using Claude, and lets you review
 and apply a plan that files everything into per-class folders. Nothing is

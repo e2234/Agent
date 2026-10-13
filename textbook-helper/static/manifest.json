@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Textbook Helper (Claude)",
+  "version": "0.1.0",
+  "description": "Save textbook pages as your reading, then ask Claude questions answered from that reading.",
+  "action": { "default_title": "Open Textbook Helper" },
+  "background": { "service_worker": "background.js", "type": "module" },
+  "side_panel": { "default_path": "sidepanel.html" },
+  "permissions": ["sidePanel", "scripting", "storage", "unlimitedStorage", "tabs"],
+  "host_permissions": ["<all_urls>"],
+  "commands": {
+    "_execute_action": {
+      "suggested_key": { "default": "Ctrl+Shift+Y", "mac": "Command+Shift+Y" }
+    }
+  }
+}

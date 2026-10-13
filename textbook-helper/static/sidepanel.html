@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Textbook Helper</title>
+  <link rel="stylesheet" href="sidepanel.css" />
+</head>
+<body>
+  <header>
+    <h1>Textbook Helper</h1>
+    <button id="settings-toggle" class="ghost" title="Settings">⚙ Settings</button>
+  </header>
+
+  <section id="settings" hidden>
+    <label>Anthropic API key
+      <input id="api-key" type="password" placeholder="sk-ant-..." autocomplete="off" />
+    </label>
+    <label>Model
+      <input id="model" type="text" />
+    </label>
+    <label>Effort
+      <select id="effort">
+        <option value="low">low (fastest)</option>
+        <option value="medium">medium</option>
+        <option value="high">high</option>
+        <option value="xhigh">xhigh</option>
+        <option value="max">max (slowest)</option>
+      </select>
+    </label>
+    <button id="save-settings">Save</button>
+    <p class="hint">Your key is stored only in this browser's extension storage and sent only to api.anthropic.com.</p>
+  </section>
+
+  <section>
+    <h2>1. Reading <span id="reading-total" class="muted"></span></h2>
+    <div class="row">
+      <button id="add-page">Add this page</button>
+      <button id="add-selection" class="secondary">Add selected text</button>
+    </div>
+    <div class="row">
+      <label class="file-btn secondary">Upload PDF / .txt
+        <input id="add-file" type="file" accept=".pdf,.txt,.md,application/pdf,text/plain" multiple hidden />
+      </label>
+      <button id="toggle-paste" class="secondary">Paste text</button>
+    </div>
+    <div id="paste-box" hidden>
+      <input id="paste-title" type="text" placeholder="Title (e.g. Chapter 4)" />
+      <textarea id="paste-text" rows="5" placeholder="Paste reading text here"></textarea>
+      <button id="add-paste">Add pasted text</button>
+    </div>
+    <ul id="sources"></ul>
+  </section>
+
+  <section>
+    <h2>2. Question</h2>
+    <div class="row">
+      <button id="grab-question" class="secondary">Grab from page</button>
+      <label class="check"><input id="use-screenshot" type="checkbox" /> Include screenshot</label>
+    </div>
+    <textarea id="question" rows="6" placeholder="Select the question on the page and click “Grab from page”, or type/paste it here."></textarea>
+    <div class="row">
+      <button id="ask" class="primary">Answer</button>
+      <button id="stop" class="secondary" hidden>Stop</button>
+    </div>
+  </section>
+
+  <section id="answer-section" hidden>
+    <h2>Answer</h2>
+    <div id="answer"></div>
+  </section>
+
+  <p id="status" role="status"></p>
+
+  <script type="module" src="sidepanel.js"></script>
+</body>
+</html>
